@@ -2,7 +2,7 @@
 import { log, BigInt, BigDecimal } from '@graphprotocol/graph-ts'
 
 export const ADDRESS_ZERO = '0x0000000000000000000000000000000000000000'
-export const GEYSER_ADDRESS = '0x5Cca2cF3f8a0e5a5aF6A1E9A54A0c98510D92081'
+export const GEYSER_ADDRESS = '0xFa7461f07Be51F50c1A5c928b16E868E7b17Ed73'
 
 export let ZERO_BI = BigInt.fromI32(0)
 export let ONE_BI = BigInt.fromI32(1)

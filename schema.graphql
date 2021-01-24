@@ -18,10 +18,10 @@ type UserReferralStaking @entity {
 }
 
 type UserStakingScore @entity {
-    id: ID!
-    staking: BigDecimal!
-    refStaking: BigDecimal!
-    amount: BigDecimal!
+  id: ID!
+  staking: BigDecimal!
+  refStaking: BigDecimal!
+  amount: BigDecimal!
 }
 
 type UserReferrer @entity {
