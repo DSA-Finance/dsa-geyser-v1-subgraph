@@ -59,7 +59,7 @@ export function handleStaked(event: Staked): void {
         geyser.totalLiquidity = ZERO_BD
         geyser.totalValidUsers = ZERO_BI
     }
-    geyser.totalLiquidity = geyser.totalLiquidity.plus(event.params.amount.toBigDecimal().div(ONE_18_BD));
+    geyser.totalLiquidity = geyser.totalLiquidity.plus(event.params.amount.toBigDecimal());
     geyser.save()
 
     let userStaking = getUserStakingInst(event.params.user);
@@ -100,7 +100,7 @@ export function handleStaked(event: Staked): void {
 
 export function handleUnstaked(event: Unstaked): void {
     let geyser = Geyser.load(GEYSER_ADDRESS)
-    geyser.totalLiquidity = geyser.totalLiquidity.minus(event.params.amount.toBigDecimal().div(ONE_18_BD));
+    geyser.totalLiquidity = geyser.totalLiquidity.minus(event.params.amount.toBigDecimal());
     geyser.save()
 
     let userStaking = getUserStakingInst(event.params.user);
