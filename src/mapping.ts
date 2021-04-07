@@ -4,7 +4,7 @@ import { Geyser, UserReferrer, UserStaking, UserReferralStaking, UserStakingScor
 import { Staked, Unstaked } from './types/Geyser/Geyser'
 import { ReferrerUpdated } from './types/ReferrerBook/ReferrerBook'
 import {
-    GEYSER_ADDRESS,
+    // GEYSER_ADDRESS,
     ZERO_BD,
     ZERO_BI,
     ONE_BI,
@@ -53,9 +53,9 @@ const getUserReferralStakingInst = (user: Address) : UserReferralStaking | null 
 }
 
 export function handleStaked(event: Staked): void {
-    let geyser = Geyser.load(GEYSER_ADDRESS)
+    let geyser = Geyser.load(event.address.toHexString())
     if (geyser === null) {
-        geyser = new Geyser(GEYSER_ADDRESS)
+        geyser = new Geyser(event.address.toHexString())
         geyser.totalLiquidity = ZERO_BD
         geyser.totalValidUsers = ZERO_BI
     }
@@ -99,7 +99,7 @@ export function handleStaked(event: Staked): void {
 }
 
 export function handleUnstaked(event: Unstaked): void {
-    let geyser = Geyser.load(GEYSER_ADDRESS)
+    let geyser = Geyser.load(event.address.toHexString())
     geyser.totalLiquidity = geyser.totalLiquidity.minus(event.params.amount.toBigDecimal());
     geyser.save()
 

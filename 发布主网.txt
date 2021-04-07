@@ -1,0 +1,3 @@
+yarn codegen
+yarn build
+yarn deploy  (最好翻墙)
