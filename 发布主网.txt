@@ -1,3 +1,3 @@
 yarn codegen
 yarn build
-yarn deploy  (最好翻墙)
+yarn deploy  (最好翻墙)  yarn deploy --access-token <ACCESS_TOKEN>

@@ -93,6 +93,28 @@ dataSources:
         - event: Unstaked(indexed address,uint256,uint256)
           handler: handleUnstaked
   - kind: ethereum/contract
+    name: GeyserV2_DSBTCDSA
+    network: mainnet
+    source:
+      address: '0x406EF22e782d2C6593093b9eCE8a4f66E5A75439'
+      abi: GeyserV2
+      startBlock: 12164011
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.3
+      language: wasm/assemblyscript
+      file: ./src/mapping.ts
+      entities:
+        - Token
+      abis:
+        - name: GeyserV2
+          file: ./abis/geyserv2.json
+      eventHandlers:
+        - event: Staked(indexed address,uint256,uint256,address)
+          handler: handleStaked
+        - event: Unstaked(indexed address,uint256,uint256)
+          handler: handleUnstaked
+  - kind: ethereum/contract
     name: ReferrerBook
     network: mainnet
     source:
